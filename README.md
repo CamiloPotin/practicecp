@@ -1,2 +1,2 @@
-# practicecp
-Problem solving practice in java 
+# Practicecp
+Practica de resolución de algoritmos usando Java de la pagina hackerrank en Problem Solving. 
