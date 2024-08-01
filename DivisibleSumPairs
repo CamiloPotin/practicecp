@@ -45,9 +45,19 @@ class Result {
         int count = 0;
         
         // Pares (0,0) -> son aquellos que tienen resto 0
-        count += (remainderCount[0] * (remainderCount[0] - 1)) / 2;
+        /*
+        Calcula las combinaciones posibles entre los numeros que son divisibles por k
+        Por ejemplo si tengo 4 numeros divisibles por k
+        Las combinaciones seran 4x3 que dan todas las combinaciones posibles entre esos numeros
+        Y se divide por 2 para quedarte solo con la mitad (si no contarian todas las combinaciones posibles incluyendo las repetidas) 
+        */
+        count += (remainderCount[0] * (remainderCount[0] - 1)) / 2; 
         
         // Pares (i, k-i)
+        /*
+        Se cuentan los pares que completan la suma para que sean divisibles por k
+        Si k = 3 y existe un i= 1 y un k=
+        */
         for (int i = 1; i <= k / 2; i++) {
             if (i != k - i) {
                 count += remainderCount[i] * remainderCount[k - i];
