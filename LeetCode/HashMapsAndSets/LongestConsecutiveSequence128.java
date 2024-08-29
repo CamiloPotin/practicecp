@@ -5,7 +5,7 @@ Problema:
 Se quiere encontrar la secuencia consecutiva mas larga de un arreglo
 
 Solucion:
-Se guarda todo el arreglo en un set y se recorre el set buscando los elementos consecutivos y calculando el maximo
+Se guarda el arreglo completo en un set y se recorre el set buscando los elementos consecutivos y calculando el maximo
 Solo se procesan los inicios de secuencias.
 
 */

@@ -13,22 +13,17 @@ Se recorre buscando el minimo y en caso de tener un minimo igual se queda con el
 
 class Solution {
     public int findClosestNumber(int[] nums) {
-        int head = Integer.MIN_VALUE, tail = Integer.MAX_VALUE;
-        for(int i = 0; i < nums.length; i++) {
-            if(nums[i] == 0) 
-                return nums[i];
-            if(nums[i] < 0 && nums[i] > head) 
-                head = nums[i];
-            if(nums[i] > 0 && nums[i] < tail)
-                tail = nums[i];
+        int min = Integer.MAX_VALUE;
+
+        for(int i : nums){
+
+            if(Math.abs(i)<Math.abs(min))
+                min= i;
+            else if(Math.abs(i)==Math.abs(min))
+                min = i > min ? i : min;
+
         }
-        if(head == Integer.MIN_VALUE)
-            return tail;
-        else if(tail == Integer.MAX_VALUE)
-            return head;
-        head *= -1;
-        if(head >= tail)
-            return tail;
-        return head * -1;
+
+        return min;
     }
 }
