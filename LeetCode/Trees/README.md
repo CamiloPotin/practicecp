@@ -1,19 +1,19 @@
 ## Tener en cuenta para resolver problemas de arboles:
 
 ### Dos tipos de recorrido:
-    - Recursivo:
-     ```java
+- Recursivo:
+```java
        if (node == null) {
             return;
         }
         System.out.print(node.val + " "); // Visitar el nodo
         preOrder(node.left);              // Recorrer el subárbol izquierdo
         preOrder(node.right);             // Recorrer el subárbol derecho
-     ```
+```
 
 
-    - Por niveles:
-     ```java
+- Por niveles:
+```java
     if (root == null) {
             return;
         }
@@ -34,7 +34,7 @@
             if (currentNode.right != null) {
                 queue.add(currentNode.right);
             }
-     ```
+```
 
 
 ### Recordar los tipos de recorrido
@@ -46,5 +46,5 @@
     Subárbol izquierdo -> Subárbol derecho -> Nodo.
 
 ### Tener en cuenta:
-  - Se pueden usar variables de clase cuando hay que llevar un calculo que implica nodos alejados entre sí
-  - Cuando se devuelve una variable de clase en vez de lo que retorna el metodo recursivo se puede usar dos metodos 
+- Se pueden usar variables de clase cuando hay que llevar un calculo que implica nodos alejados entre sí
+- Cuando se devuelve una variable de clase en vez de lo que retorna el metodo recursivo se puede usar dos metodos 
