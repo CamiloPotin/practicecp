@@ -9,7 +9,7 @@
         System.out.print(node.val + " "); // Visitar el nodo
         preOrder(node.left);              // Recorrer el subárbol izquierdo
         preOrder(node.right);             // Recorrer el subárbol derecho
-     ```` ``` ````
+     ```
 
 
     - Por niveles:
@@ -34,7 +34,7 @@
             if (currentNode.right != null) {
                 queue.add(currentNode.right);
             }
-     ```` ``` ````
+     ```
 
 
 ### Recordar los tipos de recorrido
