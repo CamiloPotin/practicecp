@@ -1,0 +1,67 @@
+/*
+1367. Linked List in Binary Tree
+
+Problema:
+Se quiere saber si una linked list se encuentra dentro de un arbol
+
+Solucion:
+Se recorre el arbol llamando a un metodo para ver si el subarbol contiene 
+la lista
+
+
+*/
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public boolean isSubPath(ListNode head, TreeNode root) {
+     // Función principal para verificar si hay un subcamino en cualquier parte del árbol
+
+        if (root == null) {
+            return false;
+        }
+        // Verificamos si la lista enlazada comienza en este nodo
+        if (checkPath(head, root)) {
+            return true;
+        }
+        // Si no, continuamos buscando en los subárboles
+        return isSubPath(head, root.left) || isSubPath(head, root.right);
+    }
+
+    // Función auxiliar que verifica si hay una coincidencia de sublista a partir de un nodo
+    private boolean checkPath(ListNode head, TreeNode node) {
+        if (head == null) {
+            return true; // Si hemos llegado al final de la lista enlazada, hay una coincidencia
+        }
+        if (node == null) {
+            return false; // Si el nodo del árbol es null, no hay coincidencia
+        }
+        if (head.val != node.val) {
+            return false; // Si los valores no coinciden, no hay coincidencia
+        }
+        // Continuamos buscando en los subárboles izquierdo y derecho
+        return checkPath(head.next, node.left) || checkPath(head.next, node.right);
+    }
+}
