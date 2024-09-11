@@ -7,6 +7,6 @@ Pendientes:
   - Tree -> Lowest Common Ancestor of a BST
 
 
-##Lecturas:
-  -https://refactoring.guru/es/design-patterns/prototype
+## Lecturas:
+  - https://refactoring.guru/es/design-patterns/prototype
   - https://github.com/iluwatar/java-design-patterns/tree/master
